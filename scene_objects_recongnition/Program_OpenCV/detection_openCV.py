@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3.6
 # -*- coding: utf-8 -*-
 """
-__title__ = '场景多个物体检测'
+__title__ = 'None'
 __author__ = 'None'
 __mtime__ = 'None'
 # code is far away from bugs with the god animal protecting
@@ -19,23 +19,30 @@ __mtime__ = 'None'
                   ┃┫┫  ┃┫┫
                   ┗┻┛  ┗┻┛
 """
+
+from imutils.video import FPS
+import numpy as np
+import time
+import cv2
 import os
-import sys
+
+class OpenCV__Detection():
+
+    def __init__(self, model_path, prototxt_path):
+        self.model_path = model_path
+        self.prototxt_path = prototxt_path
+        self.net = cv2.dnn.readNetFromCaffe(self.prototxt_path, self.model_path)
+
+    def detection_run(self, image):
+        self.blob = cv2.dnn.blobFromImage(image, 1.0 / 127.5, (300, 300), (127.5, 127.5, 127.5), True)
+
+
 
 if __name__ == '__main__':
 
-    models_path = 'F:\\MODEL_SOFTWARE\\resources\\models\\imageai\\'
+    models_path = 'F:\\MODEL_SOFTWARE\\resources\\models\\opencv\\'
 
-    image_path = 'F:\\MODEL_SOFTWARE\\resources\\image_test\\test1.png'
-    new_image_path = 'F:\\MODEL_SOFTWARE\\resources\\image_test\\test1_new.png'
+    model_path = models_path + 'MobileNetSSD_deploy.caffemodel'
+    prototxt_path = models_path + 'MobileNetSSD_deploy.prototxt.txt'
 
-    video_path = 'F:\\MODEL_SOFTWARE\\resources\\video_test\\traffic.mp4'
-    new_video_path = 'F:\\MODEL_SOFTWARE\\resources\\video_test\\traffic_new.png'
-
-    detect_method = 'ImageAI'
-    if detect_method == 'ImageAI':
-        from Program_ImageAI.detection_imageAI import Image_AI_Objects_Detection
-        object_test = Image_AI_Objects_Detection(models_path, detect_target='video')
-        # object_test.detect_run(resource_path=image_path, save_path=new_image_path)
-        object_test.detect_run(resource_path=video_path, save_path=new_video_path)
-
+    object_test = OpenCV__Detection(model_path, prototxt_path)

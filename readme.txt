@@ -1,0 +1,4 @@
+resources：资源文件夹
+scene_object_track：场景内追踪指定目标
+scene_objects_recongnition：场景内多目标识别
+single_object_recongnition：单一图片内容预测

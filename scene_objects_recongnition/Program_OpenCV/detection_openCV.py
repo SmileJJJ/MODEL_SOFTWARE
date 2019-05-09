@@ -28,14 +28,16 @@ import os
 
 class OpenCV__Detection():
 
-    def __init__(self, model_path, prototxt_path):
+    def __init__(self, model_path, prototxt_path, CONFIDENCE):
+        self.CONFIDENCE = CONFIDENCE
         self.model_path = model_path
         self.prototxt_path = prototxt_path
         self.net = cv2.dnn.readNetFromCaffe(self.prototxt_path, self.model_path)
 
     def detection_run(self, image):
         self.blob = cv2.dnn.blobFromImage(image, 1.0 / 127.5, (300, 300), (127.5, 127.5, 127.5), True)
-
+        self.net.setInput(self.blob)
+    
 
 
 if __name__ == '__main__':

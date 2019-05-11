@@ -26,32 +26,38 @@ import time
 
 class Image_AI_Objects_Prediction():
 
-    def __init__(self, models_path, predict_model='InceptionV3'):
+    def __init__(self, models_path, logger, predict_model='InceptionV3'):
         self.models_path = models_path
         self.predict_model = predict_model
         self.prediction = ImagePrediction()
-
-        if self.predict_model == 'InceptionV3':
-            self.prediction.setModelTypeAsInceptionV3()
-            path = self.models_path + 'inception_v3_weights_tf_dim_ordering_tf_kernels.h5'
-            self.prediction.setModelPath(path)
-        elif self.predict_model == 'SqueezeNet':
-            self.prediction.setModelTypeAsSqueezeNet()
-            path = self.models_path + 'squeezenet_weights_tf_dim_ordering_tf_kernels.h5'
-            self.prediction.setModelPath(path)
-        elif self.predict_model == 'ResNet50':
-            self.prediction.setModelTypeAsResNet()
-            path = self.models_path + 'resnet50_weights_tf_dim_ordering_tf_kernels.h5'
-            self.prediction.setModelPath(path)
-        elif self.predict_model == 'DenseNet121':
-            self.prediction.setModelTypeAsDenseNet()
-            path = self.models_path + 'DenseNet-BC-121-32.h5'
-            self.prediction.setModelPath(path)
-        else:
-            print('no model name ' + self.predict_model)
+        self.logger = logger
+        try:
+            if self.predict_model == 'InceptionV3':
+                self.prediction.setModelTypeAsInceptionV3()
+                path = self.models_path + 'inception_v3_weights_tf_dim_ordering_tf_kernels.h5'
+                self.prediction.setModelPath(path)
+            elif self.predict_model == 'SqueezeNet':
+                self.prediction.setModelTypeAsSqueezeNet()
+                path = self.models_path + 'squeezenet_weights_tf_dim_ordering_tf_kernels.h5'
+                self.prediction.setModelPath(path)
+            elif self.predict_model == 'ResNet50':
+                self.prediction.setModelTypeAsResNet()
+                path = self.models_path + 'resnet50_weights_tf_dim_ordering_tf_kernels.h5'
+                self.prediction.setModelPath(path)
+            elif self.predict_model == 'DenseNet121':
+                self.prediction.setModelTypeAsDenseNet()
+                path = self.models_path + 'DenseNet-BC-121-32.h5'
+                self.prediction.setModelPath(path)
+            else:
+                raise TypeError('error')
+        except:
+            self.logger.writeLog('no model name {},please check the models name or path'.format(self.predict_model),
+                                 level='error')
         self.prediction.loadModel()
+        self.logger.writeLog('model load successful', level='info')
 
     def predict_run(self,image_path):
+        self.logger.writeLog('prediction program is running', level='info')
         start = time.time()
         # 预测图片，以及结果预测输出数目
         predictions, probabilities = self.prediction.predictImage(image_path, result_count=5)
@@ -61,6 +67,7 @@ class Image_AI_Objects_Prediction():
         for eachPrediction, eachProbability in zip(predictions, probabilities):
             print(eachPrediction, " : ", eachProbability)
         print("\ncost time:", end - start)
+        self.logger.writeLog('prediction end,program quit', level='info')
 
 
 if __name__ == '__main__':

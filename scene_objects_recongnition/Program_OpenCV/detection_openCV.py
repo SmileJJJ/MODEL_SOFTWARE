@@ -20,20 +20,22 @@ __mtime__ = 'None'
                   ┗┻┛  ┗┻┛
 """
 
-from imutils.video import FPS
 import numpy as np
-import time
 import cv2
-import os
 
-class OpenCV__Detection():
+class OpenCV_Detection():
 
-    def __init__(self, model_path, prototxt_path, CONFIDENCE=0.2):
+    def __init__(self, model_path, prototxt_path, logger, CONFIDENCE=0.2):
         self.CONFIDENCE = CONFIDENCE
         self.model_path = model_path
         self.prototxt_path = prototxt_path
+        self.logger = logger
         # 加载用caffe训练好的模型，prototxt：模型结构文件，model：模型文件
-        self.net = cv2.dnn.readNetFromCaffe(self.prototxt_path, self.model_path)
+        try:
+            self.net = cv2.dnn.readNetFromCaffe(self.prototxt_path, self.model_path)
+            self.logger.writeLog('load model:MobileNetSSD successful ', level='info')
+        except:
+            self.logger.writeLog('load model:MobileNetSSD failure ', level='error')
 
         self.CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
                         "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
@@ -67,7 +69,7 @@ if __name__ == '__main__':
     model_path = models_path + 'MobileNetSSD_deploy.caffemodel'
     prototxt_path = models_path + 'MobileNetSSD_deploy.prototxt.txt'
 
-    object_test = OpenCV__Detection(model_path, prototxt_path)
+    object_test = OpenCV_Detection(model_path, prototxt_path)
 
     vc = cv2.VideoCapture(0)
     while True:
@@ -77,3 +79,4 @@ if __name__ == '__main__':
         if cv2.waitKey(1) == 27:
             break
     cv2.destroyAllWindows()
+

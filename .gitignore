@@ -94,6 +94,7 @@ venv.bak/
 
 .idea
 .vscode
+log_data
 
 # Spyder project settings
 .spyderproject

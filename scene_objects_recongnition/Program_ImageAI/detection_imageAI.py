@@ -26,11 +26,12 @@ import time
 
 class Image_AI_Objects_Detection():
 
-    def __init__(self, models_path, detect_target='image', detect_model='resnet', detect_result_save=False):
+    def __init__(self, models_path, logger, detect_target='image', detect_model='resnet', detect_result_save=False):
         self.detect_target = detect_target
         self.detect_model = detect_model
         self.models_path = models_path
         self.detect_result_save = detect_result_save
+        self.logger = logger
 
         if self.detect_target == 'image':
             from imageai.Detection import ObjectDetection
@@ -41,23 +42,28 @@ class Image_AI_Objects_Detection():
         else:
             print('target wrong')
 
-        if self.detect_model == 'resnet':
-            self.detector.setModelTypeAsRetinaNet()
-            self.detector.setModelPath(self.models_path + 'resnet50_coco_best_v2.0.1.h5')
-        elif self.detect_model == 'yolo_tiny':
-            self.detector.setModelTypeAsTinyYOLOv3()
-            self.detector.setModelPath(self.models_path + 'yolo-tiny.h5')
-        else:
-            print('no model name ' + self.detect_model)
+        try:
+            if self.detect_model == 'resnet':
+                self.detector.setModelTypeAsRetinaNet()
+                self.detector.setModelPath(self.models_path + 'resnet50_coco_best_v2.0.1.h5')
+            elif self.detect_model == 'yolo_tiny':
+                self.detector.setModelTypeAsTinyYOLOv3()
+                self.detector.setModelPath(self.models_path + 'yolo-tiny.h5')
+            else:
+                raise TypeError('error')
+        except:
+            self.logger.writeLog('no model name {},please check the models name or path'.format(self.detect_model), level='error')
 
         self.detector.loadModel()
+        self.logger.writeLog('model load successful', level='info')
 
     def detect_run(self, resource_path, save_path):
+        self.logger.writeLog('detection program is running', level='info')
         if self.detect_target == 'image':
             self.image_detect_run(resource_path, save_path)
         elif self.detect_target == 'video':
             self.video_detect_run(resource_path, save_path)
-
+        self.logger.writeLog('detection end,program quit', level='info')
 
     def image_detect_run(self, image_path, save_path):
         # 将检测后的结果保存为新图片
@@ -91,9 +97,9 @@ class Image_AI_Objects_Detection():
 
 
 if __name__ == '__main__':
-    models_path = 'F:\\MODEL_SOFTWARE\\resources\\models\\imageai\\'
-    image_path = 'F:\\MODEL_SOFTWARE\\resources\\image_test\\'
-    video_path = 'F:\\MODEL_SOFTWARE\\resources\\video_test\\'
+    models_path = '..\\..\\..\\MODEL_SOFTWARE\\resources\\models\\imageai\\'
+    image_path = '..\\..\\..\\MODEL_SOFTWARE\\resources\\image_test\\'
+    video_path = '..\\..\\..\\MODEL_SOFTWARE\\resources\\video_test\\'
     root_path = os.getcwd()
     detection_target = 'video'
     object_test = Image_AI_Objects_Detection(models_path, detect_target='video')

@@ -31,10 +31,6 @@ class objects_recongnition():
         self.models_path = '..\\..\\MODEL_SOFTWARE\\resources\\models\\imageai\\'
         self.image_path = '..\\..\\MODEL_SOFTWARE\\resources\\image_test\\'
 
-        #  转换data_convert的参数获取方式
-        self.
-
-
     def run(self):
         if self.program_method == 'Program_ImageAI':
             self.Program_ImageAI_run()

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1df86ce1-3211-4249-b0e4-b36c6239682b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_object_recongnition/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_objects_recongnition/Program_ImageAI/detection_imageAI.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_objects_recongnition/Program_ImageAI/detection_imageAI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_objects_recongnition/Program_OpenCV/detection_openCV.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_objects_recongnition/Program_OpenCV/detection_openCV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_objects_recongnition/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/scene_objects_recongnition/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_objects_recongnition/scene_objects_recongnition.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_objects_recongnition/scene_objects_recongnition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/single_object_recongnition/Program_ImageAI/prediction_imageAI.py" beforeDir="false" afterPath="$PROJECT_DIR$/single_object_recongnition/Program_ImageAI/prediction_imageAI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/data_convert.py" beforeDir="false" afterPath="$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/data_convert.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_object_recongnition/single_project_recongnition.py" beforeDir="false" afterPath="$PROJECT_DIR$/single_object_recongnition/single_project_recongnition.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +15,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$prediction_imageAI.coverage" NAME="prediction_imageAI Coverage Results" MODIFIED="1557395828292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single_object_recongnition/Program_ImageAI" />
-    <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$data_convert.coverage" NAME="data_convert Coverage Results" MODIFIED="1557575839903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single_object_recongnition/Program_ImageNet" />
     <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$scene_objects_recongnition.coverage" NAME="scene_objects_recongnition Coverage Results" MODIFIED="1557581810201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scene_objects_recongnition" />
+    <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$data_convert.coverage" NAME="data_convert Coverage Results" MODIFIED="1557631413599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single_object_recongnition/Program_ImageNet" />
     <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$model_software_main.coverage" NAME="model_software_main Coverage Results" MODIFIED="1557579713950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$detection_imageAI.coverage" NAME="detection_imageAI Coverage Results" MODIFIED="1557580157635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scene_objects_recongnition/Program_ImageAI" />
     <SUITE FILE_PATH="coverage/MODEL_SOFTWARE$single_project_recongnition.coverage" NAME="single_project_recongnition Coverage Results" MODIFIED="1557583454886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/single_object_recongnition" />
@@ -68,45 +64,50 @@
     <session id="1944958763">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="25" />
+          <entry key="py" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="25" />
+          <entry key="Python" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="8" />
-          <entry key="py" value="1639" />
+          <entry key="py" value="1974" />
+          <entry key="txt" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="8" />
-          <entry key="Python" value="1639" />
+          <entry key="PLAIN_TEXT" value="44" />
+          <entry key="Python" value="1974" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5833333">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/single_object_recongnition/single_project_recongnition.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="366">
-                  <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+                <state relative-caret-position="282">
+                  <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
                   <folding>
-                    <marker date="1557583880519" expanded="true" signature="603:1583" ph="..." />
+                    <marker date="1557671328077" expanded="true" signature="603:1534" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -115,14 +116,27 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/data_convert.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+                <state relative-caret-position="446">
+                  <caret line="63" selection-start-line="63" selection-end-line="63" />
                   <folding>
                     <element signature="e#15#53#0" expanded="true" />
+                    <marker date="1557637218041" expanded="true" signature="557:2421" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/tfrecord.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="10500">
+                  <caret line="387" selection-start-line="387" selection-end-line="399" selection-end-column="7" />
+                  <folding>
+                    <element signature="e#2445#2483#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -177,16 +191,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/resources/research/syntaxnet/dragnn/viz/package.json" />
-    </packageJsonPaths>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="3457" />
-    <option name="height" value="1417" />
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="3459" />
+    <option name="height" value="1419" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -245,12 +254,6 @@
               <item name="MODEL_SOFTWARE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="single_object_recongnition" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="Program_ImageAI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MODEL_SOFTWARE" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="single_object_recongnition" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="Program_ImageNet" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
@@ -284,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.single_project_recongnition">
+  <component name="RunManager" selected="Python.data_convert">
     <configuration name="data_convert" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MODEL_SOFTWARE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -404,11 +407,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data_convert" />
         <item itemvalue="Python.single_project_recongnition" />
         <item itemvalue="Python.scene_objects_recongnition" />
         <item itemvalue="Python.detection_imageAI" />
         <item itemvalue="Python.model_software_main" />
-        <item itemvalue="Python.data_convert" />
       </list>
     </recent_temporary>
   </component>
@@ -437,19 +440,26 @@
       <option name="project" value="LOCAL" />
       <updated>1557398232620</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="prepare to add imagenet model train">
+      <created>1557584162462</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557584162462</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1461126" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21849866" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22978723" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21702127" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -463,7 +473,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.028150134" />
+      <window_info active="true" anchor="right" id="SciView" order="3" visible="true" weight="0.028150134" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -476,7 +486,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit~2019.05.07" />
     <MESSAGE value="after work 5.9" />
-    <option name="LAST_COMMIT_MESSAGE" value="after work 5.9" />
+    <MESSAGE value="prepare to add imagenet model train" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare to add imagenet model train" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scene_objects_recongnition/Program_ImageAI/readme.txt">
@@ -523,15 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logging/myLogger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#86#100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logging/myLogger.py" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -550,9 +553,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-          <folding>
-            <element signature="e#542#560#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -574,9 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
-          <folding>
-            <element signature="e#561#570#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,36 +588,36 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/data_convert.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
-            <element signature="e#545#555#0" expanded="true" />
-            <marker date="1557582503282" expanded="true" signature="618:2917" ph="..." />
+            <element signature="e#15#53#0" expanded="true" />
+            <marker date="1557637218041" expanded="true" signature="557:2421" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/tfrecord.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2171">
-          <caret line="60" column="16" lean-forward="true" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/single_object_recongnition/Program_ImageNet/data_convert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="10500">
+          <caret line="387" selection-start-line="387" selection-end-line="399" selection-end-column="7" />
           <folding>
-            <element signature="e#15#53#0" expanded="true" />
+            <element signature="e#2445#2483#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/single_object_recongnition/single_project_recongnition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="50" column="12" lean-forward="true" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+        <state relative-caret-position="282">
+          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
           <folding>
-            <marker date="1557583880519" expanded="true" signature="603:1583" ph="..." />
+            <marker date="1557671328077" expanded="true" signature="603:1534" ph="..." />
           </folding>
         </state>
       </provider>

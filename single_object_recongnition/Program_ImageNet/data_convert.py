@@ -2,7 +2,7 @@
 from __future__ import absolute_import
 import argparse
 import os
-from tfrecord import *
+from .tfrecord import *
 
 
 def parse_args():

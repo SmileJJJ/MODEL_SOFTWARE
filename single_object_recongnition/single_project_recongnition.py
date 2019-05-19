@@ -79,38 +79,38 @@ class objects_recongnition():
     def run(self, model_name=None):
         if self.program_method == 'Program_ImageAI':
             self.Program_ImageAI_run()
-        elif self.program_method == 'Program_ImageNet':
-            self.Program_ImageNet_run(model_name)
+        elif self.program_method == 'Program_Slim':
+            self.Program_Slim_run(model_name)
 
     def Program_ImageAI_run(self):
         from Program_ImageAI.prediction_imageAI import Image_AI_Objects_Prediction
         object_test = Image_AI_Objects_Prediction(self.models_path, self.logger, predict_model='DenseNet121')
         object_test.predict_run(image_path=self.image_path + "test5.png")
 
-    def Program_ImageNet_run(self, model_name):
+    def Program_Slim_run(self, model_name):
         self.model_name = model_name
         # 原始图片数据转换成tf_recode格式
-        # self.Program_ImageNet_data_convert()
+        # self.Program_Slim_data_convert()
         # 开始训练
-        # self.Program_ImageNet_data_train()
+        # self.Program_Slim_data_train()
         # 数据集验证
-        # self.Program_ImageNet_data_validation()
+        # self.Program_Slim_data_validation()
         # tensorboard 训练可视化
-        self.Program_ImageNet_data_train_tensorboard()
+        # self.Program_Slim_data_train_tensorboard()
         # 训练结果模型导出
-        # self.Program_ImageNet_data_export_model()
+        # self.Program_Slim_data_export_model()
         # 模型重载,权重固化
-        # self.Program_ImageNet_data_reload()
+        # self.Program_Slim_data_reload()
         # 运行预测图片
-        # self.Program_ImageNet_data_classify()
+        self.Program_Slim_data_classify()
 
-    def Program_ImageNet_data_convert(self):
-        from Program_ImageNet.data_convert import parse_args_image
+    def Program_Slim_data_convert(self):
+        from Program_Slim.data_convert import parse_args_image
         data_dir = '..//resources//data_prepare//pic'
         params = parse_args_image(data_dir)
         params.convert_run()
 
-    def Program_ImageNet_data_train(self):
+    def Program_Slim_data_train(self):
         self.logger.writeLog('training start ', level='info')
         os.system('cd ../common/slim & \
                    python train_image_classifier.py \
@@ -133,7 +133,7 @@ class objects_recongnition():
                    --weight_decay=0.00004'.format(self.model_name))
         self.logger.writeLog('the training program has finished, please check the training results ', level='info')
 
-    def Program_ImageNet_data_validation(self):
+    def Program_Slim_data_validation(self):
         self.logger.writeLog('validation start ', level='info')
         os.system('cd ../common/slim & \
                    python eval_image_classifier.py \
@@ -145,11 +145,11 @@ class objects_recongnition():
                    --model_name={}'.format(self.model_name))
         self.logger.writeLog('the validation program has finished, please check the validation results ', level='info')
 
-    def Program_ImageNet_data_train_tensorboard(self):
+    def Program_Slim_data_train_tensorboard(self):
         os.system('tensorboard --logdir ./../resources/satellite/data/train_dir')
         webbrowser.open_new_tab('http://127.0.0.1:6006')   # 处于阻塞状态
 
-    def Program_ImageNet_data_export_model(self):
+    def Program_Slim_data_export_model(self):
         self.logger.writeLog('start to export model', level='info')
         os.system('cd ../common/slim & \
                    python export_inference_graph.py \
@@ -159,7 +159,7 @@ class objects_recongnition():
                    --dataset_name=satellite'.format(self.model_name))
         self.logger.writeLog('export model has finished, please check the export results ', level='info')
 
-    def Program_ImageNet_data_reload(self):
+    def Program_Slim_data_reload(self):
         max_num = 0
         for root, dirs, files in os.walk('..\\resources\\satellite\\data\\train_dir'):
             for file in files:
@@ -193,7 +193,7 @@ class objects_recongnition():
         return image_data
 
 
-    def Program_ImageNet_data_classify(self):
+    def Program_Slim_data_classify(self):
         model_path = '..\\resources\\satellite\\frozen_graph.pb'
         label_path = '..\\resources\\data_prepare\\pic\\label.txt'
         image_file = '..\\resources\\image_test\\test3.png'
@@ -212,13 +212,12 @@ class objects_recongnition():
                     print('%s (score=%.5f)' % (str(node_id, score)))
 
 
-
 if __name__ == '__main__':
 
     logger = LogHelper('single_recongnition_log')
 
     require_method = 'single_object_recongnition'
-    program_method = 'Program_ImageNet'
+    program_method = 'Program_Slim'
 
     object_recongnition = objects_recongnition(require_method, program_method, logger)
     object_recongnition.run('inception_v3')
